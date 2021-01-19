@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>留言本</title>
+  <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="header container">
+    <div class="page-header">
+      <h1>Example page header <small>Subtext for header</small></h1>
+      <a class="btn btn-success" href="/post">發表留言</a>
+    </div>
+  </div>
+  <div class="comments container">
+    <ul class="list-group">
+      {{each comments}}
+      <li class="list-group-item">{{ $value.uname }} <span class="pull-right">{{ $value.date }}</span>{{ $value.content
+        }}</li>
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+</html>
