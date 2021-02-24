@@ -39,7 +39,7 @@ server.on('request', (req, res) => {
                 return res.end('not found 404');
             };
             let newData = tpl.render(data.toString(), {
-                comments: comments,
+                comment: comments,
             });
             res.end(newData);
         });
@@ -58,6 +58,7 @@ server.on('request', (req, res) => {
             res.end(data);
         });
     } else if (pathurl === '/pinglun') {
+        console.log(newurl);
         let comment = newurl.query;
         comment.date = '2019-01-01';
         comments.unshift(comment);
